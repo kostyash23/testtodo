@@ -16,9 +16,3 @@ code {
     monospace;
 }
 
-
-.bg-custom {
-    background-image: url('./assets/images/bg-desktop-light.jpg');
-    background-size: cover;
-    background-position: center;
-}

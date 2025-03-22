@@ -13,6 +13,13 @@
   }
 }
 
+.bg-custom {
+  background-image: url('./assets/images/bg-desktop-light.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

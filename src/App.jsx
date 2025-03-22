@@ -53,11 +53,11 @@ function App() {
   }, [darkMode]);
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
-      <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 h-72" />
+    <div className="min-h-screen font-sans  bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+      <div className="absolute  bg-custom inset-0 bg-gradient-to-r from-purple-500 to-blue-500 h-72" />
       <div className="relative z-10 w-full max-w-lg mx-auto pt-16 px-6">
         <header className="flex justify-between items-center mb-8">
-          <h1 className="text-white text-4xl font-extrabold tracking-wide">TODO</h1>
+          <h1 className="text-white text-3xl font-extrabold font-sans  tracking-wide">T O D O</h1>
           <button onClick={() => setDarkMode(!darkMode)} className="text-white p-2 rounded-md hover:bg-white/20 transition" aria-label="Toggle dark mode">
             {darkMode ? <SunIcon /> : <MoonIcon />}
           </button>
