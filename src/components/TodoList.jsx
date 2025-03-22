@@ -32,12 +32,12 @@ const TodoList = ({ todos, toggleTodo, deleteTodo, setTodos }) => {
   };
 
   return (
-    <div className="bg-white dark:bg-[#25273c] rounded-md shadow-xl overflow-hidden">
+    <div className="bg-white dark:bg-dark-bg rounded-md shadow-xl overflow-hidden">
       <ul>
         {todos.map((todo, index) => (
           <li
             key={todo.id}
-            className="border-b border-gray-200 dark:border-gray-700 relative"
+            className="border-b border-light-item dark:border-dark-item relative"
             draggable
             onDragStart={() => handleDragStart(index)}
             onDragEnter={() => handleDragEnter(index)}
@@ -56,20 +56,20 @@ const TodoList = ({ todos, toggleTodo, deleteTodo, setTodos }) => {
                     "w-5 h-5 rounded-full flex items-center justify-center",
                     todo.completed
                       ? "bg-gradient-to-br from-blue-400 to-purple-500"
-                      : "border-2 border-gray-300 dark:border-gray-600"
+                      : "border-2 border-light-item dark:border-dark-item"
                   )}
                 >
                   {todo.completed && (
-                   <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9"><path fill="none" stroke="#FFF" stroke-width="2" d="M1 4.304L3.696 7l6-6"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9"><path fill="none" stroke="#FFF" strokeWidth="2" d="M1 4.304L3.696 7l6-6" /></svg>
                   )}
                 </div>
               </div>
 
-              <div className="flex-1 cursor-grab active:cursor-grabbing">
+              <div className=" font-sans flex-1 cursor-grab active:cursor-grabbing">
                 <span
                   className={classnames(
-                    "text-gray-700 dark:text-gray-300",
-                    todo.completed && "line-through text-gray-400 dark:text-gray-500"
+                    "text-light-text dark:text-dark-text",
+                    todo.completed && "line-through text-light-text-muted dark:text-dark-text-muted"
                   )}
                 >
                   {todo.text}
@@ -79,10 +79,10 @@ const TodoList = ({ todos, toggleTodo, deleteTodo, setTodos }) => {
               {hoveredTodo === todo.id && (
                 <button
                   onClick={() => deleteTodo(todo.id)}
-                  className="text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
+                  className="text-light-text-muted hover:text-light-text dark:hover:text-dark-text-muted"
                   aria-label="Delete todo"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path fill="#494C6B" fill-rule="evenodd" d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path fill="#494C6B" fillRule="evenodd" d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z" /></svg>
                 </button>
               )}
             </div>
@@ -92,5 +92,6 @@ const TodoList = ({ todos, toggleTodo, deleteTodo, setTodos }) => {
     </div>
   );
 };
+
 
 export default TodoList;
